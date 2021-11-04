@@ -9,9 +9,9 @@ let blogContent = document.querySelector('.blog-content');
 // functions
 function  getBlogContent() {
     
-        fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json())
+        fetch('https://jsonplaceholder.typicode.com/posts/${urlID}`').then(response => response.json())
         .then(data =>{ 
-
+            const urlID = window.location.search;
             let cardSection = document.querySelector('.card-section');
             let html = '';
             ;
@@ -58,8 +58,8 @@ function  getBlogContent() {
 
 getBlogContent();
 
-function readPost(storyId) {
- localStorage.setItem('page' , JSON.stringify(storyId));
+// function readPost(storyId) {
+//  localStorage.setItem('page' , JSON.stringify(storyId));
  
-    window.location = 'content.html';
-    }
+//     window.location = 'content.html';
+//     }

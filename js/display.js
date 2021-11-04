@@ -2,7 +2,7 @@ let data = localStorage.getItem('page');
 
 function displayStory() {
     fetch('https://jsonplaceholder.typicode.com/posts/${data}').then(response => response.json()).then((data) =>{ 
-            console.log(data);
+        
             let stories = document.querySelector('#story');
             let html = ` 
             <div class="row">
