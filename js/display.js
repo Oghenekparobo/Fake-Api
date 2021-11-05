@@ -1,10 +1,10 @@
-let data = localStorage.getItem('page');
+let pages = localStorage.getItem('page');
 
-function displayStory() {
-    fetch('https://jsonplaceholder.typicode.com/posts/${data}').then(response => response.json()).then((data) =>{ 
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${pages}`).then(response => response.json()).then((data) =>{ 
         
             let stories = document.querySelector('#story');
-            let html = ` 
+            html = ` 
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-5 body-bg rounded" id="title">
                     <div class="header-text">
@@ -25,6 +25,3 @@ function displayStory() {
     }).catch((e) =>{ 
        console.log(e);
     });
-}
-
-displayStory();
